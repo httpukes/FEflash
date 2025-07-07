@@ -1,0 +1,96 @@
+body {
+  background-color: #0a192f;
+  font-family: 'Martian Mono', monospace;
+  
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.title {
+  margin-bottom: 2rem;
+}
+
+.card-container {
+  width: 35vw;
+  height: 80vh;
+  perspective: 1500px;
+  margin-bottom: 2rem;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+}
+
+
+.card-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+
+
+
+
+.flipped {
+  transform: rotateY(180deg);
+}
+
+.card-side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: white;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.card-front img,
+.card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 1rem;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.button-row {
+  display: flex;
+  gap: 1rem;
+}
+
+.icon-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem; 
+  color: #64ffda;
+  padding: 0.5rem;
+  transition: transform 0.2s ease;
+
+}
+
+.icon-button:hover {
+  transform: scale(1.2);
+  color: #52d6b6;
+}
