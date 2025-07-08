@@ -5,14 +5,14 @@ const nextBtn = document.getElementById("next-btn");
 const prevBtn = document.getElementById("prev-btn");
 
 const cards = [
-  { front: "images/DMA/DMA SUM25.png", back: "images/DMA SOL/DMA SUM25 SOL.png", average: "53.8%" },
-  { front: "images/DMA/DMA SP25.png", back: "images/DMA SOL/DMA SP25 SOL.png" , average: "59.4%"},
-  { front: "images/DMA/DMA FA24.png", back: "images/DMA SOL/DMA FA24 SOL.png",average: "39.7%" },
-  { front: "images/DMA/DMA SUM24.png", back: "images/DMA SOL/DMA SUM24 SOL.png" , average: "60.9%"},
-  { front: "images/DMA/DMA SP24.png", back: "images/DMA SOL/DMA SP24 SOL.png", average: "63.1%" },
-  { front: "images/DMA/DMA FA23.png", back: "images/DMA SOL/DMA FA23 SOL.png", average: "57.3%"},
-
-
+  { front: "images/STACKS MAS/STACKS/STACKS SUM25.png", back: "images/STACKS MAS/STACKS SOL/STACKS SUM25 SOL.png", average: "59.4%" },
+  { front: "images/STACKS MAS/STACKS/STACKS SP25.png", back: "images/STACKS MAS/STACKS SOL/STACKS SP25 SOL.png", average: "88.4%" },
+  { front: "images/STACKS MAS/STACKS/STACKS SUM24.png", back: "images/STACKS MAS/STACKS SOL/STACKS SUM24 SOL.png", average: "56.8%" },
+  { front: "images/STACKS MAS/STACKS/STACKS SP24.png", back: "images/STACKS MAS/STACKS SOL/STACKS SP24 SOL.png", average: "58.3%" },
+  { front: "images/STACKS MAS/STACKS/STACKS FA23.png", back: "images/STACKS MAS/STACKS SOL/STACKS FA23 SOL.png", average: "35.2%" },
+  { front: "images/STACKS MAS/STACKS/STACKS SP23.png", back: "images/STACKS MAS/STACKS SOL/STACKS SP23 SOL.png", average: "75.6%" },
+  { front: "images/STACKS MAS/STACKS/STACKS FA22.png", back: "images/STACKS MAS/STACKS SOL/STACKS FA22 SOL.png", average: "52.6%" },
+  
 ];
 
 let current = 0;
