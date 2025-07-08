@@ -16,6 +16,7 @@ const cards = [
 ];
 
 let current = 0;
+let filteredCards = [...cards];
 
 flashcard.addEventListener("click", () => {
   flashcard.classList.toggle("flipped");
@@ -24,24 +25,62 @@ flashcard.addEventListener("click", () => {
 
 nextBtn.addEventListener("click", () => {
   flashcard.classList.remove("flipped");
-  current = (current + 1) % cards.length;
+  current = (current + 1) % filteredCards.length;
   updateCard();
 });
 
 
 prevBtn.addEventListener("click", () => {
   flashcard.classList.remove("flipped");
-  current = (current - 1 + cards.length) % cards.length;
+  current = (current - 1 + filteredCards.length) % filteredCards.length;
   updateCard();
 });
 
 
-
 function updateCard() {
-  frontImg.src = cards[current].front;
-  backImg.src = cards[current].back;
-  document.getElementById("info-text").textContent = `Average: ${cards[current].average}`;
+
+  const noCardsImg = document.getElementById("no-cards-image");
+
+  if (filteredCards.length === 0) {
+    frontImg.src = "";
+    backImg.src = "";
+    flashcard.style.display = "none";
+    noCardsImg.style.display = "block";
+    document.getElementById("info-text").textContent = "No cards found.";
+    return;
+  }
+
+  flashcard.style.display = "block";
+  noCardsImg.style.display = "none";
+
+
+  frontImg.src = filteredCards[current].front;
+  backImg.src = filteredCards[current].back;
+  document.getElementById("info-text").textContent = `Average: ${filteredCards[current].average}`;
   flashcard.classList.remove("flipped");
 }
+
+function getDifficulty(avgStr) {
+  const avg = parseFloat(avgStr);
+  if (avg < 40) return "hard";
+  if (avg < 70) return "medium";
+  return "easy";
+}
+
+document.querySelectorAll(".difficulty-filter button").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const level = btn.getAttribute("data-difficulty");
+
+    if (level === "all") {
+      filteredCards = [...cards]; 
+    } else {
+      filteredCards = cards.filter(card => getDifficulty(card.average) === level);
+    }
+
+    current = 0;
+    updateCard();
+  });
+});
+
 
 updateCard();

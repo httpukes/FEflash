@@ -41,9 +41,6 @@ body {
 }
 
 
-
-
-
 .flipped {
   transform: rotateY(180deg);
 }
@@ -143,5 +140,45 @@ body {
   justify-content: flex-end;
   align-items: center;
   padding: 0.5rem 1.25rem;
+}
+
+.difficulty-filter {
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.difficulty-filter button {
+  background-color: #112240;
+  border: 1px solid #233554;
+  color: #64ffda;
+  font-family: 'Poppins', sans-serif;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.difficulty-filter button:hover {
+  background-color: #64ffda;
+  color: #0a192f;
+}
+
+
+#no-cards-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: none;
+  border: 2px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  padding: 1rem;
+  position: absolute; 
+  top: 0;
+  left: 0;
+  background: white;
 }
 
