@@ -1,7 +1,6 @@
 body {
   background-color: #0a192f;
   font-family: 'Martian Mono', monospace;
-  
   color: white;
   display: flex;
   flex-direction: column;
@@ -9,6 +8,7 @@ body {
   justify-content: center;
   height: 100vh;
   margin: 0;
+  padding-top: 65px; 
 }
 
 .title {
@@ -93,4 +93,56 @@ body {
 .icon-button:hover {
   transform: scale(1.2);
   color: #52d6b6;
+}
+
+.info-bubble {
+  background-color: #112240;
+  color: #64ffda;
+  border: 1px solid #233554;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  max-width: 600px;
+  margin-top: 1rem;
+  font-size: 1rem;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+  color: green;
+  margin-top:25px;
+  margin-right:65px;
+
+  
+}
+
+.nav a{
+  font-family: "Martian Mono", monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color:white;
+  text-decoration: none;
+  
+}
+
+.nav a:hover{
+  color: #64ffda;
+}
+
+.topbar {
+  display: flex;
+  justify-content:flex-end;
+  align-items: center;
+  padding: 0.85rem;
+  background: #0a192f;
+  position:fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  z-index: 1000;
+  transition: top 0.3s ease;
+
 }

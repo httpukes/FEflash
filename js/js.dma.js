@@ -2,11 +2,17 @@ const flashcard = document.getElementById("flashcard");
 const frontImg = document.getElementById("front-image");
 const backImg = document.getElementById("back-image");
 const nextBtn = document.getElementById("next-btn");
+const prevBtn = document.getElementById("prev-btn");
 
 const cards = [
-  { front: "images/DMA/DMA SUM25.png", back: "images/DMA SOL/DMA SUM25 SOL.png" },
-  { front: "images/myquestion2.png", back: "images/myanswer2.png" },
-  { front: "images/myquestion3.png", back: "images/myanswer3.png" }
+  { front: "images/DMA/DMA SUM25.png", back: "images/DMA SOL/DMA SUM25 SOL.png", average: "53.8%" },
+  { front: "images/DMA/DMA SP25.png", back: "images/DMA SOL/DMA SP25 SOL.png" , average: "59.4%"},
+  { front: "images/DMA/DMA FA24.png", back: "images/DMA SOL/DMA FA24 SOL.png",average: "39.7%" },
+  { front: "images/DMA/DMA SUM24.png", back: "images/DMA SOL/DMA SUM24 SOL.png" , average: "60.9%"},
+  { front: "images/DMA/DMA SP24.png", back: "images/DMA SOL/DMA SP24 SOL.png", average: "63.1%" },
+  { front: "images/DMA/DMA FA23.png", back: "images/DMA SOL/DMA FA23 SOL.png", average: "57.3%"},
+
+
 ];
 
 let current = 0;
@@ -30,7 +36,12 @@ prevBtn.addEventListener("click", () => {
 });
 
 
+
 function updateCard() {
   frontImg.src = cards[current].front;
   backImg.src = cards[current].back;
+  document.getElementById("info-text").textContent = `Average: ${cards[current].average}`;
+  flashcard.classList.remove("flipped");
 }
+
+updateCard();
